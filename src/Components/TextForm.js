@@ -6,15 +6,18 @@ export default function TextForm(props) {
     let newText = text.toUpperCase();
     // console.log(newText);
     setText(newText);
+    props.showAlert("Changed to UPPERCASE","success");
   };
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Extra Spaces Removed","success");
   };
   const ChangeLwrCase = () => {
     let newText = text.toLowerCase();
     // console.log(newText);
     setText(newText);
+    props.showAlert("Changed to lowercase","success");
   };
   const handleReverse = (event) => {
     /* Convert string to array*/
@@ -28,11 +31,13 @@ export default function TextForm(props) {
   const ClearText = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("TextBox Cleared","success");
   };
   const handleCopy = () => {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Text Copied to ClipBoard","success");
   };
   const onChange = (event) => {
     setText(event.target.value);

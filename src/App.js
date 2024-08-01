@@ -7,16 +7,28 @@ import React, { useState } from "react";
 
 function App() {
   const [mode, setMode] = useState("light");
+  const [alert, setAlert] = useState(null);
+
+  const showAlert=(message,type)=>{
+    setAlert({msg:message,
+    type:type});
+
+    setTimeout(() => {
+      setAlert(null);
+    }, 1900);
+  }
 
 
   const toggleMode = () => {
     if (mode === 'light') {
         setMode('dark');
         document.body.style.backgroundColor = '#212529';
+        showAlert("DarkMode Enabled","success");
     }
     else {
         setMode('light');
         document.body.style.backgroundColor = 'white';
+        showAlert("LightMode Enabled","success");
     }
 };
 
@@ -25,9 +37,10 @@ function App() {
     <>
       {/* <Navbar /> */}
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
-      <Alert alert="This is a Alert"/>
+      <Alert alert={alert}/>
       <div className="container my-3">
         <TextForm
+          showAlert={showAlert}
           heading="Enter your Text here"
           mode={mode}
           toggleMode={toggleMode}
