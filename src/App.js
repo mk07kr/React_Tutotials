@@ -2,6 +2,7 @@
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
+import Alert from "./Components/Alerts";
 import React, { useState } from "react";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     <>
       {/* <Navbar /> */}
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+      <Alert alert="This is a Alert"/>
       <div className="container my-3">
         <TextForm
           heading="Enter your Text here"
