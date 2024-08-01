@@ -64,7 +64,7 @@ export default function TextForm(props) {
           Convert LowerCase
         </button>
         <button className="btn btn-success mx-1 my-2" onClick={ClearText}>
-          Clear
+          Clear All
         </button>
         <button className="btn btn-success mx-1 my-2" onClick={handleReverse}>
           Reverse Words
