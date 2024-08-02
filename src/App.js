@@ -4,6 +4,14 @@ import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 import Alert from "./Components/Alert";
 import React, { useState } from "react";
+import About from "./Components/About";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+} from "react-router-dom";
+
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -46,6 +54,7 @@ function App() {
           toggleMode={toggleMode}
         />
       </div>
+      <About title="About Us"/>
     </>
   );
 }
