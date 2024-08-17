@@ -85,7 +85,9 @@ export default function TextForm(props) {
         </button>
         <h2>Text Summary</h2>
         <p>
-          {text.split(" ").length} Words and {text.length} Characters
+          {/* {text.split(" ").length && text.split("\n").length}Words and {text.length} Characters */}
+          <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words 
+          and {text.length} characters</p>
         </p>
         <h2>Preview</h2>
         <p>
